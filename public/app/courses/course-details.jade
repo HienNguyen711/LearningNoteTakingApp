@@ -1,0 +1,35 @@
+.container
+  h1 {{course.title}}
+  .row
+    .col-md-6
+      h3(ng-show="course.featured") Notes taking
+      h3 Published on {{course.published | date}}
+
+    .col-md-6
+      .panel.panel-primary
+        .panel-heading Tags
+        .panel-body
+          div(ng-repeat="tag in course.tags") {{tag}}
+
+
+    .col-md-6
+      .panel.panel-primary
+        .panel-heading Note taking
+        .panel-body
+            div(ui-ace="{\
+            useWrapMode : true,\
+            showGutter: false,\
+            theme:'twilight',\
+            mode: 'markdown'\
+            }")
+                | #Hello world
+            a.btn.btn-info.pull-right(href='#') Save
+    .col-md-6
+      .panel.panel-primary
+        .panel-heading Note taking
+        .panel-body
+            div(ui-ace='', ng-model='aceValue')
+
+            a.btn.btn-info.pull-right(href='#')(ng-click="update()) Save
+
+

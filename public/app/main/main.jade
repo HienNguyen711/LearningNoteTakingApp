@@ -1,0 +1,10 @@
+.container
+  .jumbotron
+    h1 {{appName}}
+    p Welcome to Learning Note Taking app! We do this, for students.
+
+  .row
+    .col-md-6
+      div(ng-include="'/partials/main/ongoing-courses'")
+    .col-md-6
+      div(ng-include="'/partials/main/new-courses'")
