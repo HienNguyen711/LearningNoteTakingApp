@@ -96,7 +96,7 @@ angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, mvUser) 
     updateCurrentCourseNote: function(newCourseNoteData) {
       var dfd = $q.defer();
 
-      var clone = angular.copy(mvIdentity.currentCourseNote
+      var clone = angular.copy(mvIdentity.currentCourseNote);
       angular.extend(clone, newCourseNoteData);
       clone.$update().then(function() {
         mvIdentity.currentCourseNote = clone;

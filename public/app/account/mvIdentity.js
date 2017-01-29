@@ -10,7 +10,7 @@ angular.module('app').factory('mvIdentity', function($window, mvUser,mvCourseNot
 
     currentCourseNote = new mvCourseNote();
     angular.extend(currentCourseNote);
-  }
+
 
   return {
       //current user
@@ -25,4 +25,4 @@ angular.module('app').factory('mvIdentity', function($window, mvUser,mvCourseNot
       return !!this.currentUser && this.currentUser.roles.indexOf(role) > -1;
     }
   }
-})
+});
